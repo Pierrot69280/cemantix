@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Jeu Sémantix</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Bienvenue sur ma page d'accueil Flask !</h1>
-    <form action="/" method="POST">
-        <label for="prenom">Votre prénom :</label>
-        <input type="text" id="prenom" name="prenom">
-        <button type="submit">Envoyer</button>
-    </form>
+<body class="bg-dark mt-5">
+    <div class="container">
+        <h1 class="text-center mb-4 text-white">Devinez le mot secret !</h1>
+
+        <div class="card">
+            <div class="card-body">
+                <form action="/" method="POST" class="text-center">
+                    <div class="form-group">
+                        <label for="given_word" class="h5 text-white">Votre mot :</label>
+                        <input type="text" id="given_word" name="given_word" class="form-control" placeholder="Entrez votre mot ici" required>
+                    </div>
+                    <button type="submit" class="btn btn-light btn-lg">Deviner</button>
+                </form>
+
+                <p class="result text-center text-black mt-3">{{ message }}</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
